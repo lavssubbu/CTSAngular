@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Angular Tutorial",
+      "content": "Learn Angular step-by-step.",
+      "imageUrl":"assets/post1.jpg"
+    },
+    {
+      "id": "3",
+      "title": "postivity",
+      "content": "inspirational posts",
+      "imageUrl": "assets/post3.jpg"
+    }
+  ]
+}

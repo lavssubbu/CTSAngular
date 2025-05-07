@@ -1,0 +1,6 @@
+<h2>Post Details</h2>
+<div *ngIf="post">
+  <img [src]="post.imageUrl" width="150" />
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.content }}</p>
+</div>

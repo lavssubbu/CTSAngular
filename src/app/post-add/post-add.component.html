@@ -1,0 +1,8 @@
+<h2>Add New Post</h2>
+<form (ngSubmit)="onSubmit()">
+    <input [(ngModel)]="post.id" name="id" placeholder="postid" required />
+  <input [(ngModel)]="post.title" name="title" placeholder="Title" required />
+  <textarea [(ngModel)]="post.content" name="content" placeholder="Content"></textarea>
+  <input [(ngModel)]="post.imageUrl" name="imageUrl" placeholder="Image URL" required />
+  <button type="submit">Add Post</button>
+</form>

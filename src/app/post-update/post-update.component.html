@@ -1,0 +1,8 @@
+<h2>Update Post</h2>
+<form *ngIf="post" (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="post.title" name="title" required />
+  <textarea [(ngModel)]="post.content" name="content"></textarea>
+  <input [(ngModel)]="post.imageUrl" name="imageUrl" />
+  <button type="submit">Update</button>
+</form>
+
