@@ -1,9 +1,13 @@
 <h2>Post List</h2>
-<input [(ngModel)]="searchTerm" placeholder="Search by title" />
+<input [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="Search by title" />
 
-<ul>
-  <li *ngFor="let post of search()">
-    <img [src]="post.imageUrl" width="150px"/>
+<div *ngIf="isLoading" class="loading">
+  Loading posts...
+</div>
+
+<ul *ngIf="!isLoading">
+  <li *ngFor="let post of filteredPosts">
+    <img [src]="post.imageUrl" width="150px" alt="{{ post.title }}"/>
     <h3>{{ post.title }}</h3>
     <p>{{ post.content }}</p>
     <a [routerLink]="['/detail', post.id]">View</a> |
@@ -11,5 +15,10 @@
     <button (click)="deletePost(post.id)">Delete</button>
   </li>
 </ul>
-<a routerLink="/add">Add New Post</a>
+
+<div *ngIf="!isLoading && filteredPosts.length === 0" class="no-results">
+  No posts found.
+</div>
+
+<a routerLink="/add" class="add-button">Add New Post</a>
 

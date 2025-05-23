@@ -1,6 +1,19 @@
-<h2>Post Details</h2>
-<div *ngIf="post">
-  <img [src]="post.imageUrl" width="150" />
-  <h3>{{ post.title }}</h3>
-  <p>{{ post.content }}</p>
+<div class="post-detail">
+  <h2>Post Details</h2>
+
+  <div *ngIf="isLoading" class="loading">
+    Loading post...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="post && !isLoading && !error" class="post-content">
+    <img [src]="post.imageUrl" [alt]="post.title" class="post-image" />
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+  </div>
+
+  <button (click)="goBack()" class="back-button">Back to List</button>
 </div>
